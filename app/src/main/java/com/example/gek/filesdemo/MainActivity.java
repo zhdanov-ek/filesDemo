@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -125,14 +126,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void listFiles(){
         String result = "List files and folder in " + sdPathAbsolute.toString() + ": \n";
         try{
-            // array of files and directory
+            // Получаем массив всех папок и файлов по указанному пути в объекте  класса File
             String list[] = sdPathAbsolute.list();
+            // Для сортировки по имени используем стандартный класс Arrays из библиотек Java
+            Arrays.sort(list);
 
-
-            // for each name in the path array
+            // Перебираем массив и выводим каждое имя файла или папки
             for(String path:list)
             {
-                // prints filename and directory name
                 result += path + "\n";
             }
         }catch(Exception e){
