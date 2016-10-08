@@ -11,89 +11,114 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.gek.filesdemo.MainActivity">
 
-    <TextView
-        android:text="Info"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:id="@+id/tvPathInternal" />
-    <TextView
-        android:text="Info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:id="@+id/tvSDCardInfo" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:text="@string/name_file"
-            android:hint="@string/hint_name_file"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:id="@+id/etFileName"
-            android:layout_weight="100"/>
-        <Button
-            android:text="Remove"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnRemoveFile"
-            android:layout_weight="250" />
-    </LinearLayout>
+            android:orientation="vertical" >
 
-    <EditText
-        android:hint="@string/hint_text_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/etInputText" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <Button
-            android:text="@string/button_read_file"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnReadFile"
-            android:layout_weight="1" />
+            <TextView
+                android:text="Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:id="@+id/tvPathInternal" />
+            <TextView
+                android:text="Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:id="@+id/tvSDCardInfo" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:text="@string/name_file"
+                    android:hint="@string/hint_name_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/etFileName"
+                    android:layout_weight="100"/>
+                <Button
+                    android:text="Remove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnRemoveFile"
+                    android:layout_weight="250" />
+            </LinearLayout>
 
-        <Button
-            android:text="@string/button_write_file"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnWriteFile"
-            android:layout_weight="1" />
-    </LinearLayout>
+            <EditText
+                android:hint="@string/hint_text_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/etInputText" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <Button
-            android:text="@string/button_read_SD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnReadSD"
-            android:layout_weight="1" />
+                <Button
+                    android:text="@string/button_read_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnReadFile"
+                    android:layout_weight="1" />
 
-        <Button
-            android:text="@string/button_write_SD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnWriteSD"
-            android:layout_weight="1" />
-    </LinearLayout>
+                <Button
+                    android:text="@string/button_write_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnWriteFile"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
-    <TextView
-        android:text="@string/text_result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvResult"
-        android:textSize="18sp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:text="@string/button_read_SD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnReadSD"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:text="@string/button_write_SD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnWriteSD"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:text="@string/button_list_folder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnListFiles"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:text="@string/text_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvResult"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

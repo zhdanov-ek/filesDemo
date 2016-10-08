@@ -20,10 +20,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btnReadFile, btnWriteFile, btnReadSD, btnWriteSD, btnRemoveFile;
+    Button btnReadFile, btnWriteFile, btnReadSD, btnWriteSD, btnRemoveFile, btnListFiles;
     EditText etInputText, etFileName;
     TextView tvResult, tvSDCardInfo, tvPathInternal;
 
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnReadSD.setOnClickListener(this);
         btnWriteSD = (Button)findViewById(R.id.btnWriteSD);
         btnWriteSD.setOnClickListener(this);
+        btnListFiles = (Button)findViewById(R.id.btnListFiles);
+        btnListFiles.setOnClickListener(this);
 
         etFileName = (EditText)findViewById(R.id.etFileName);
         etInputText = (EditText)findViewById(R.id.etInputText);
@@ -110,9 +114,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnWriteSD:
                 writeSDFile();
                 break;
+            case R.id.btnListFiles:
+                listFiles();
+                break;
             default:
                 break;
         }
+    }
+
+    private void listFiles(){
+        String result = "List files and folder in " + sdPathAbsolute.toString() + ": \n";
+        try{
+            // array of files and directory
+            String list[] = sdPathAbsolute.list();
+
+
+            // for each name in the path array
+            for(String path:list)
+            {
+                // prints filename and directory name
+                result += path + "\n";
+            }
+        }catch(Exception e){
+            // if any error occurs
+            e.printStackTrace();
+        }
+        tvResult.setText(result);
     }
 
     private void removeFile(){

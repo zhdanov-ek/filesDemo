@@ -8,5 +8,6 @@
     <string name="button_write_file">Write to file</string>
     <string name="button_read_SD">Read from SD</string>
     <string name="button_write_SD">Write to SD</string>
+    <string name="button_list_folder">Show list files in folder</string>
     <string name="text_result">Result</string>
 </resources>
