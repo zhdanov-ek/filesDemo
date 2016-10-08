@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">filesDemo</string>
+    <string name="name_file">demo_file.txt</string>
+    <string name="hint_name_file">Name of file</string>
+    <string name="hint_text_input">Any text for write to file</string>
+    <string name="button_read_file">Read from file</string>
+    <string name="button_write_file">Write to file</string>
+    <string name="button_read_SD">Read from SD</string>
+    <string name="button_write_SD">Write to SD</string>
+    <string name="text_result">Result</string>
+</resources>
