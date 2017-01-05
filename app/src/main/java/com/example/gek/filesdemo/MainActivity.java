@@ -26,7 +26,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btnReadFile, btnWriteFile, btnReadSD, btnWriteSD, btnRemoveFile, btnListFiles;
+    Button btnReadFile, btnWriteFile, btnReadSD, btnWriteSD, btnRemoveFile, btnListFiles, btnCheck;
     EditText etInputText, etFileName;
     TextView tvResult, tvSDCardInfo, tvPathInternal;
 
@@ -61,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnWriteSD.setOnClickListener(this);
         btnListFiles = (Button)findViewById(R.id.btnListFiles);
         btnListFiles.setOnClickListener(this);
+        btnCheck = (Button)findViewById(R.id.btnCheck);
+        btnCheck.setOnClickListener(this);
+
 
         etFileName = (EditText)findViewById(R.id.etFileName);
         etInputText = (EditText)findViewById(R.id.etInputText);
@@ -118,9 +121,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnListFiles:
                 listFiles();
                 break;
+            case R.id.btnCheck:
+                checkFile();
+                break;
             default:
                 break;
         }
+    }
+
+    private void checkFile() {
+        File path = new File(sdPathAbsolute, fileName);
+        if (path.exists()){
+            tvResult.setText(path + " \nis founded");
+        } else {
+            tvResult.setText(path + "Not found");
+        }
+
     }
 
     private void listFiles(){
@@ -130,7 +146,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String list[] = sdPathAbsolute.list();
             // Для сортировки по имени используем стандартный класс Arrays из библиотек Java
             Arrays.sort(list);
-
             // Перебираем массив и выводим каждое имя файла или папки
             for(String path:list)
             {
